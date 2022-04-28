@@ -8,7 +8,7 @@ protocol PageViewDelegate: class {
   func pageViewDidTouch(_ pageView: PageView)
 }
 
-public class PageView: UIScrollView {
+class PageView: UIScrollView {
 
   lazy var imageView: UIImageView = {
     let imageView = UIImageView()
@@ -35,11 +35,11 @@ public class PageView: UIScrollView {
 
   lazy var loadingIndicator: UIView = LightboxConfig.makeLoadingIndicator()
 
-    public var image: LightboxImage
-    public var contentFrame = CGRect.zero
+  var image: LightboxImage
+  var contentFrame = CGRect.zero
   weak var pageViewDelegate: PageViewDelegate?
 
-    public var hasZoomed: Bool {
+  var hasZoomed: Bool {
     return zoomScale != 1.0
   }
 
@@ -54,7 +54,7 @@ public class PageView: UIScrollView {
     fetchImage()
   }
 
-    required init?(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -142,7 +142,7 @@ public class PageView: UIScrollView {
 
   // MARK: - Layout
 
-    public override func layoutSubviews() {
+  override func layoutSubviews() {
     super.layoutSubviews()
 
     loadingIndicator.center = imageView.center
