@@ -142,7 +142,7 @@ public class PageView: UIScrollView {
 
   // MARK: - Layout
 
-  override func layoutSubviews() {
+    public override func layoutSubviews() {
     super.layoutSubviews()
 
     loadingIndicator.center = imageView.center
