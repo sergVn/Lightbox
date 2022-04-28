@@ -8,7 +8,7 @@ protocol PageViewDelegate: class {
   func pageViewDidTouch(_ pageView: PageView)
 }
 
-class PageView: UIScrollView {
+public class PageView: UIScrollView {
 
   lazy var imageView: UIImageView = {
     let imageView = UIImageView()
