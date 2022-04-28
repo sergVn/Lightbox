@@ -35,11 +35,11 @@ public class PageView: UIScrollView {
 
   lazy var loadingIndicator: UIView = LightboxConfig.makeLoadingIndicator()
 
-  var image: LightboxImage
-  var contentFrame = CGRect.zero
+    public var image: LightboxImage
+    public var contentFrame = CGRect.zero
   weak var pageViewDelegate: PageViewDelegate?
 
-  var hasZoomed: Bool {
+    public var hasZoomed: Bool {
     return zoomScale != 1.0
   }
 
@@ -54,7 +54,7 @@ public class PageView: UIScrollView {
     fetchImage()
   }
 
-  required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
